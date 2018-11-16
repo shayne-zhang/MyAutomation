@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import test.DataReader;
 import test.Drivers;
@@ -14,15 +15,15 @@ public class Search {
 
 	String HomePage = "https://cn.bing.com";
 
-	WebDriver driver;
 
+	WebDriver driver;
+	
 	@Test()
 	public void test() throws InterruptedException {
 		// import data from file
 		DataReader dataReader = new DataReader();
 		List<String> data = dataReader.getData("src/test/resources/Data.case");
 		System.out.println(String.join(",", data));
-
 		// get default driver and homepage
 		String targetDriver = "chrome";
 		new Drivers(targetDriver, HomePage);
